@@ -1,12 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Container from '@mui/material/Container';
+import Navebar from './component/Navebar';
+import ImageGallery from './component/ImageGallery';
+import Event from './component/Event'
+import Footer from './component/Footer'
 
 function App() {
   return (
     <>
-      <p>Hey How are you we are in the react dom</p>
+      <Container fixed>
+        <Navebar />
+        <ImageGallery />
+        <Event />
+        <Footer />
+      </Container>
     </>
-  );
+  )
 }
 
 export default App;
