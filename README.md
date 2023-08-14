@@ -8,6 +8,16 @@ To get started, make sure you have the following installed on your machine:
 
 - [Docker](https://www.docker.com/products/docker-desktop)
 
+## Description
+
+This project is designed to showcase the use of Material-UI components in creating a wedding facilities website. It provides a simple layout with various components from the Material-UI library to demonstrate how to build a responsive and visually appealing interface.
+Docker 
+
+## Technologies Used
+
+- React: A JavaScript library for building user interfaces.
+- Material-UI: A popular React UI framework that follows Google's Material Design guidelines.
+- Docker
 ## Getting Started
 
 1. Clone this repository to your local machine:
