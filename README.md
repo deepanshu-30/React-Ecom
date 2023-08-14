@@ -1,4 +1,4 @@
-# My React Project with Material-UI and Docker Setup 🚀🚀🚀🚀
+# My React Project with Material-UI and Docker Setup  🚀🚀🚀🚀
 
 Welcome to my React project! This project showcases a React application built with Material-UI and comes with a Docker setup for easy development and deployment.
 
