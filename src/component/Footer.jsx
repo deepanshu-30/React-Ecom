@@ -5,6 +5,7 @@ import FolderIcon from '@mui/icons-material/Folder';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { AppBar } from '@mui/material';
 
 export default function Footer() {
     const [value, setValue] = React.useState('recents');
@@ -14,7 +15,7 @@ export default function Footer() {
     };
 
     return (
-        <BottomNavigation sx={{ width: 'auto', backgroundImage: 'linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 100%)' }}
+        <BottomNavigation stickyFooter="true" sx={{ width: 'auto', backgroundImage: 'linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 100%)' }}
             value={value} onChange={handleChange}>
             <BottomNavigationAction
                 label="Recents"

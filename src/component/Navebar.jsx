@@ -12,8 +12,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import RamenDiningRoundedIcon from '@mui/icons-material/RamenDiningRounded';
+import { Link } from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Home', 'Services', 'AboutUs'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navebar() {
@@ -91,7 +92,9 @@ function Navebar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Link to={page === 'Home' || page === 'home' ? '/' : `/${page}`}>
+                                        <Typography textAlign="center">{page}</Typography>
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -117,13 +120,15 @@ function Navebar() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
+                            <Link to={page === 'Home' || page === 'home' ? '/' : `/${page}`}>
+                                < Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page}
+                                </Button>
+                            </Link>
                         ))}
                     </Box>
 
@@ -157,7 +162,7 @@ function Navebar() {
                         </Menu>
                     </Box>
                 </Toolbar>
-            </Container>
+            </Container >
         </AppBar >
     );
 }
