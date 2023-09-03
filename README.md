@@ -57,7 +57,9 @@ Experiment with Material-UI components and styles to customize your app's look a
 Contributions are welcome! If you find any issues or want to add features or improvements, feel free to create pull requests.
 
 **Screen**
-![Screenshot](src/Images/ScreenDesign/Screen.png)
+![Screenshot](src/Images/ScreenDesign/S1.png)
+![Screenshot](src/Images/ScreenDesign/S2.png)
+![Screenshot](src/Images/ScreenDesign/S3.png)
 
 Happy coding! 🚀🚀🚀🚀🚀🚀🚀
 
