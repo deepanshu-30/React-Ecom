@@ -1,4 +1,4 @@
-# My React Project with Material-UI and Docker Setup  🚀🚀🚀🚀
+# My React Project with Material-UI, Redux Toolkit and Docker Setup  🚀🚀🚀🚀
 
 Welcome to my React project! This project showcases a React application built with Material-UI and comes with a Docker setup for easy development and deployment.
 
@@ -17,6 +17,8 @@ Docker
 
 - React: A JavaScript library for building user interfaces.
 - Material-UI: A popular React UI framework that follows Google's Material Design guidelines.
+- Redux Toolkit: A state management library for React applications.
+- React Router DOM: A library for client-side routing in React applications.
 - Docker
 ## Getting Started
 
