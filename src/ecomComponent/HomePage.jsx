@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react'
+import BaseGrid from './BaseGrid'
+import Base from './Base'
 import Box from '@mui/material/Box';
-import RG from './BaseGrid';
 import Typography from '@mui/material/Typography';
-import Base from './Base';
 
-export default function Event() {
+const HomePage = () => {
     return (
         <Base>
             <Box sx={{
@@ -31,7 +31,7 @@ export default function Event() {
                         textTransform: 'uppercase'
                     }}
                 >
-                    Services
+                    Products
                 </Typography>
                 <Typography
                     variant="h5"
@@ -52,12 +52,16 @@ export default function Event() {
 
                     }}
                 >
-                    Services
+                    Products
                 </Typography>
-                <RG />
-            </Box >
-        </Base>
+                <BaseGrid />
+            </Box>
+
+        </Base >
 
 
-    );
+
+    )
 }
+
+export default HomePage
