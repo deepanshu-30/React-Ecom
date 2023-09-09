@@ -3,32 +3,37 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import { CardActionArea, CardActions } from '@mui/material';
+import { PlpButton } from './Buttons';
+import { add } from './store/cartSlice';
+import { useDispatch } from 'react-redux';
 
-const Cards = () => {
+const Cards = ({ data }) => {
+
+    const dispatch = useDispatch()
+    const addProduct = (data) => {
+        dispatch(add(data))
+    }
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
                     height="140"
-                    image="https://cdn.togetherv.com/yellow-white-floral-haldi-setup-decor-main_1665040175.webp"
+                    image={data.images[0]}
                     alt="green iguana"
                 />
-                <CardContent>
+                <CardContent sx={{ textAlign: 'center' }}>
                     <Typography gutterBottom variant="h5" component="div">
-                        Lizard
+                        {data.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
+                    <Typography variant="h5" color="text.secondary">
+                        {data.price}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Buy Now
-                </Button>
+                <PlpButton handleClick={() => addProduct(data)} name={"Buy This"} />
             </CardActions>
         </Card>
     );
