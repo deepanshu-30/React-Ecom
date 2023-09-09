@@ -1,5 +1,6 @@
 import { Container } from '@mui/material'
 import React from 'react'
+import Footer from './Footer'
 import Nave from './Nave'
 
 const Base = ({ children }) => {
@@ -7,6 +8,7 @@ const Base = ({ children }) => {
         <Container fixed>
             <Nave />
             {children}
+            <Footer />
         </Container>
     )
 }
