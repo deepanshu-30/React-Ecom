@@ -51,7 +51,7 @@ Access the React App:
 Once the containers are up and running, you can access the React app in your browser by navigating to http://localhost:3000.
 
 -**Screen**
--![Screenshot](src/Images/ScreenDesign/S1.png)
+-![Screenshot](src/Images/ScreenDesign/Ss.png)
 -![Screenshot](src/Images/ScreenDesign/S2.png)
 -![Screenshot](src/Images/ScreenDesign/S3.png)
 -![Screenshot](src/Images/ScreenDesign/S4.png)
