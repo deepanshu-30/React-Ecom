@@ -24,7 +24,8 @@ const Heading = ({ children, name }) => {
                     color: 'inherit',
                     textDecoration: 'none',
                     mx: 'auto',
-                    mt: 4,
+                    mt: 5,
+                    my: 1,
                     textTransform: 'uppercase'
                 }}
             >
@@ -40,7 +41,7 @@ const Heading = ({ children, name }) => {
                     display: { xs: 'flex', md: 'none' },
                     fontFamily: 'Roboto',
                     fontWeight: 700,
-                    fontSize: 40,
+                    fontSize: 30,
                     letterSpacing: '.2rem',
                     color: 'inherit',
                     textDecoration: 'none',

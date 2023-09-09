@@ -3,20 +3,30 @@ import { Badge, ButtonBase, IconButton, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { remove } from './store/cartSlice'
 const Img = styled('img')({
     display: 'block',
     maxWidth: '100%',
     maxHeight: '100%',
-    // borderRadius: '16px',
+    borderRadius: '16px',
 });
 
 const CartProductDisplayGrids = () => {
+
+    const dispatch = useDispatch()
+    const removeProduct = (id) => {
+        console.log(id)
+        dispatch(remove(id))
+    }
+
+    const products = useSelector((state) => state.cart)
+    console.log(products.length)
     return (
         <>
             {
-                Array.from(Array(6)).map((_, index) => (
-                    <Grid container key={index}
+                products.map((product, index) => (
+                    <Grid container key={product.id}
                         direction="row"
                         display={'flex'}
                         justifyContent={"center"}
@@ -33,7 +43,7 @@ const CartProductDisplayGrids = () => {
                             }}
                         >
                             <ButtonBase sx={{ width: 'auto', height: 80 }}>
-                                <Img alt="complex" src="https://cdn.togetherv.com/yellow-white-floral-haldi-setup-decor-main_1665040175.webp" />
+                                <Img alt="complex" src={product.images[0]} />
                             </ButtonBase>
                         </Grid>
                         <Grid xs={5} md={7} item container
@@ -45,18 +55,19 @@ const CartProductDisplayGrids = () => {
                                 mx: 'auto'
                             }}>
                             <Typography
-                                variant="body2"
+                                variant="h5"
                                 gutterBottom
                                 sx={{
                                     mx: 2,
-                                    textAlign: 'center'
+                                    textAlign: 'center',
+                                    fontWeight: 400
                                 }}
 
                             >
-                                Full resolution 1920x1080 • JPEG
+                                {product.title}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                ID: 1030114
+                            <Typography variant="h6" sx={{ fontWeight: 200 }} color="text.secondary">
+                                {product.price}
                             </Typography>
                         </Grid>
                         <Grid xs={3} md={1} item
@@ -69,15 +80,12 @@ const CartProductDisplayGrids = () => {
                                 mx: 3,
                             }}>
                                 <Badge color="error">
-                                    <DeleteIcon sx={{ fontSize: 35 }} />
+                                    <DeleteIcon onClick={() => { removeProduct(product.id) }} sx={{ fontSize: 35 }} />
                                 </Badge>
                             </IconButton>
                         </Grid>
                     </Grid>
-
-
                 ))
-
             }
         </>
     )

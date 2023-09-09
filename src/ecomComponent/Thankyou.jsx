@@ -2,15 +2,19 @@ import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { removeall } from './store/cartSlice'
 
 const Thankyou = () => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     useEffect(() => {
         setTimeout(() => {
             navigate('/')
-        }, 2000);
+        }, 3000);
+        dispatch(removeall())
     }, [])
 
     return (

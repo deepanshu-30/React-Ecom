@@ -10,8 +10,10 @@ import Menu from '@mui/material/Menu';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { ShoppingCartCheckout } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { useSelector, UseSelector } from 'react-redux';
 
 export default function Nave() {
+    const itemCount = useSelector((state) => state.cart)
 
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -45,7 +47,7 @@ export default function Nave() {
             <MenuItem>
                 <Link to={'/cart'}>
                     <IconButton size="large" sx={{ color: 'black' }}>
-                        <Badge badgeContent={4} color="error">
+                        <Badge badgeContent={itemCount.length} color="error">
                             <ShoppingCartCheckout />
                         </Badge>
                     </IconButton>
@@ -74,7 +76,7 @@ export default function Nave() {
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Link to={'/cart'}>
                             <IconButton size="large" sx={{ color: '#FFF' }}>
-                                <Badge badgeContent={4} color="error">
+                                <Badge badgeContent={itemCount.length} color="error">
                                     <ShoppingCartCheckout />
                                 </Badge>
                             </IconButton>
